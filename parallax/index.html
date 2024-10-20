@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Koko de lux</title>
+        <link rel="stylesheet" href="style.css" />
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    </head>
+    <body>
+
+        <nav>
+            <ul class="sidebar">
+                <li onclick="hideSidebar()" class="close"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="islands.html">Islands</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+
+            <ul class="navbar">
+                <li class="logo"><img src="logo.png" alt=""></li>
+                <li class="hideOnMobile"><a href="#">Home</a></li>
+                <li class="hideOnMobile"><a href="islands.html">Islands</a></li>
+                <li class="hideOnMobile"><a href="gallery.html">Gallery</a></li>
+                <li class="hideOnMobile"><a href="faq.html">FAQ</a></li>
+                <li class="hideOnMobile"><a href="about.html">About</a></li>
+                <li onclick="showSidebar()" class="menu"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+            </ul>
+        </nav>
+
+        <section class="parallax">
+            <img src="logo.png" class="logo" alt="Koko de Lux Logo">
+            <img src="sky.png" id="cloud" alt="Cloudy Sky">
+            <img src="sea.png" id="sea" alt="Sea View">
+            <img src="stpierre.png" id="stpierre" alt="Island Image">
+            <img src="leaf-left.png" id="leaf-left" alt="Left Leaf Decoration">
+            <img src="leaf-right.png" id="leaf-right" alt="Right Leaf Decoration">
+            <img src="seychelles.png" id="text" alt="Seychelles Text Image">
+            <img src="fade-sand.png" id="fade" alt="fade sand Image">
+            
+            <!-- <img src="boat.png" id="boat"> -->
+        </section>
+
+       
+
+        <section class="sec">
+            <h2>Paradise on Earth</h2>
+                <p>
+                    A holiday in Seychelles is like stepping into paradise, 
+                    where the pristine beauty of nature captivates your senses at every turn. 
+                    The islands are renowned for their powdery white-sand beaches framed by lush, 
+                    green jungles and striking granite boulders. The crystal-clear turquoise waters 
+                    invite visitors to swim, snorkel, and dive among vibrant coral reefs teeming 
+                    with marine life. Beyond its beaches, Seychelles offers unique adventures, 
+                    from hiking through tropical rainforests to spotting rare species like the 
+                    giant Aldabra tortoises. The laid-back island culture, warm hospitality, 
+                    and luxurious resorts create a perfect blend of relaxation and adventure, 
+                    making Seychelles an unforgettable tropical escape. <br><br>
+
+                    In addition to its stunning natural beauty, Seychelles is a haven for eco-tourism, 
+                    offering travelers a chance to explore the islands' rich biodiversity. 
+                    Nature reserves like Vallée de Mai, a UNESCO World Heritage Site, are home to 
+                    the rare Coco de Mer palm and a variety of endemic species. Hiking trails wind 
+                    through dense forests, leading to hidden waterfalls and panoramic viewpoints 
+                    overlooking the Indian Ocean. Birdwatchers will delight in spotting rare species 
+                    such as the Seychelles black parrot and the Seychelles warbler. The islands’ 
+                    commitment to conservation makes it a perfect destination for those who appreciate 
+                    the serenity of untouched environments and want to experience nature in its purest form.<br><br>
+                    
+                    Beyond its landscapes, Seychelles offers a rich cultural experience rooted in a blend of African, 
+                    European, and Asian influences. Visitors can enjoy Creole cuisine, a fusion of flavors that 
+                    combines fresh seafood, tropical fruits, and aromatic spices. Exploring local markets and 
+                    traditional villages provides insight into the laid-back island lifestyle, while Seychellois 
+                    music and dance add to the vibrant atmosphere. Whether it's a romantic getaway, a family adventure, 
+                    or a solo escape, Seychelles caters to all types of travelers, offering luxury, tranquility, 
+                    and an intimate connection with nature. It’s a place where time seems to slow down, allowing 
+                    you to fully immerse yourself in the beauty and magic of island life.<br><br>
+                </p>
+        </section>
+
+        <section class="animated-grid">
+            <div id="image-track" data-mouse-down-at="0" data-prev-percentage="0">
+                <img class="image" src="grid/1.jpeg" draggable="false"/>
+                <img class="image" src="grid/2.jpg" draggable="false"/>
+                <img class="image" src="grid/3.jpg" draggable="false"/>
+                <img class="image" src="grid/4.jpg" draggable="false"/>
+                <img class="image" src="grid/5.jpg" draggable="false"/>
+                <img class="image" src="grid/6.jpg" draggable="false"/>
+                <img class="image" src="grid/7.jpg" draggable="false"/>
+                <img class="image" src="grid/8.jpg" draggable="false"/>
+            </div>
+        </section>
+
+        
+
+        <div class="arrow-upward" onclick="scrollToTop()">
+            <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#e8eaed">
+                <path d="M440-160v-487L216-423l-56-57 320-320 320 320-56 57-224-224v487h-80Z"/>
+            </svg>
+        </div>
+
+        <section class="footer">
+            <div class="social">
+                <a href="https://www.facebook.com" target="_blank">
+                    <i class='bx bxl-facebook-circle'></i>
+                </a>
+                <a href="https://www.linkedin.com" target="_blank">
+                    <i class='bx bxl-linkedin-square'></i>
+                </a>
+                <a href="https://www.github.com" target="_blank">
+                    <i class='bx bxl-github'></i>
+                </a>
+            </div>
+            <p>All rights reserved. © 2024 KOKO DE LUX </p>
+        </section>
+
+        <script src="script.js"></script>
+    </body>
+</html>
