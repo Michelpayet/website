@@ -53,14 +53,16 @@ faqs.forEach(faq => {
 const track = document.getElementById("image-track");
 
 if (track) {
-    window.onmousedown = e => {
-        track.dataset.mouseDownAt = e.clientX;
-    }
+    // Function to handle the start of touch or mouse
+    const startInteraction = (clientX) => {
+        track.dataset.mouseDownAt = clientX;
+    };
 
-    window.onmousemove = e => {
+    // Function to handle movement for both touch and mouse
+    const moveInteraction = (clientX) => {
         if (track.dataset.mouseDownAt === "0") return;
 
-        const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.clientX,
+        const mouseDelta = parseFloat(track.dataset.mouseDownAt) - clientX,
               maxDelta = window.innerWidth / 2;
 
         const percentage = (mouseDelta / maxDelta) * -100,
@@ -73,19 +75,29 @@ if (track) {
             transform: `translate(${nextPercentage}%, -50%)`
         }, { duration: 1200, fill: "forwards" });
 
-        // Move the image animation inside the mousemove event
+        // Move the image animation inside the move event
         for (const image of track.getElementsByClassName("image")) {
             image.animate({
                 objectPosition: `${100 + nextPercentage}% center`
             }, { duration: 1200, fill: "forwards" });
         }
-    }
+    };
 
-    window.onmouseup = () => {
-        // Store the final percentage after dragging ends
+    // Function to handle end of touch or mouse
+    const endInteraction = () => {
         track.dataset.prevPercentage = track.dataset.percentage;
         track.dataset.mouseDownAt = "0";
-    }
+    };
+
+    // Mouse event listeners
+    window.onmousedown = (e) => startInteraction(e.clientX);
+    window.onmousemove = (e) => moveInteraction(e.clientX);
+    window.onmouseup = endInteraction;
+
+    // Touch event listeners
+    window.ontouchstart = (e) => startInteraction(e.touches[0].clientX);
+    window.ontouchmove = (e) => moveInteraction(e.touches[0].clientX);
+    window.ontouchend = endInteraction;
 }
 
 const videos = document.querySelectorAll('.hover-video');
